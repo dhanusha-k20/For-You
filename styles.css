@@ -159,15 +159,6 @@ body.reveal-mode {
     animation-delay: 0s;
 }
 
-
-
-.left-center {
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    animation-delay: 12s;
-}
-
 .random-1 {
     top: 20%;
     left: 70%;
