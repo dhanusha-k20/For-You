@@ -159,12 +159,7 @@ body.reveal-mode {
     animation-delay: 0s;
 }
 
-.bottom-center {
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    animation-delay: 6s;
-}
+
 
 .left-center {
     top: 50%;
