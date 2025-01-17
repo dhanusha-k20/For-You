@@ -1,0 +1,231 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #2b1055, #7597de, #d27d9d);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack elements vertically */
+}
+
+/* Main Content Styling */
+#mainContent {
+    text-align: center;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin: 10px 0;
+}
+
+.content p {
+    font-size: 1.5rem;
+    margin: 10px 0 20px;
+}
+
+/* Button Styling */
+button {
+    background-color: #4a148c;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #6a1b9a;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 102, 204, 0.8);
+}
+
+/* Secret Message Styling */
+#secretMessage {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd700;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Highlight Secret Message on Reveal */
+.highlight {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Shrink Main Content on Reveal */
+.shrink {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* Additional Content Styling */
+#additionalContent {
+    display: none;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #fff;
+    line-height: 1.5; /* Spacing between lines */
+    max-width: 90%; /* Prevents overflow on smaller screens */
+    max-height: 90vh; /* Limits height to prevent overflow */
+    position: absolute; /* Absolute positioning */
+}
+
+
+
+/* Adjustments for Flexbox Layout */
+body.reveal-mode {
+    justify-content: center; /* Ensure both content and additional text stay centered */
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    #additionalContent {
+        font-size: 1.5rem; /* Reduce font size for smaller screens */
+        padding: 15px;
+    }
+
+    #secretMessage {
+        font-size: 1.5rem; /* Scale down the secret message */
+    }
+
+    button {
+        font-size: 1rem; /* Adjust button size */
+        padding: 10px 20px; /* Adjust padding for buttons */
+    }
+
+    #mainContent h1 {
+        font-size: 2rem; /* Adjust heading size */
+    }
+
+    #mainContent p {
+        font-size: 1.2rem; /* Adjust paragraph size */
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+    #additionalContent {
+        font-size: 1.2rem; /* Further reduce font size */
+    }
+
+    #secretMessage {
+        font-size: 1.2rem; /* Scale down the secret message */
+    }
+
+    button {
+        font-size: 0.9rem; /* Further adjust button size */
+        padding: 8px 15px;
+    }
+
+    #mainContent h1 {
+        font-size: 1.8rem; /* Adjust heading size */
+    }
+
+    #mainContent p {
+        font-size: 1rem; /* Adjust paragraph size */
+    }
+}
+
+/* Star Styling */
+.firefly {
+    position: absolute;
+    width: 4px; /* Tiny dot for the star */
+    height: 4px;
+    background-color: rgba(255, 255, 255, 1); /* Bright white core */
+    border-radius: 50%; /* Makes it a perfect dot */
+    box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.5); /* Soft glow effect */
+    opacity: 0; /* Initially hidden */
+    animation: twinkle 10s infinite ease-in-out; /* Slower animation */
+}
+
+/* Individual Star Positions (Randomized) */
+.top-left {
+    top: 10%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.bottom-center {
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 6s;
+}
+
+.left-center {
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    animation-delay: 12s;
+}
+
+.random-1 {
+    top: 20%;
+    left: 70%;
+    animation-delay: 18s;
+}
+
+.random-2 {
+    top: 40%;
+    left: 80%;
+    animation-delay: 24s;
+}
+
+.random-3 {
+    top: 30%;
+    left: 25%;
+    animation-delay: 30s;
+}
+
+.random-4 {
+    bottom: 10%;
+    right: 15%;
+    animation-delay: 36s;
+}
+
+.random-5 {
+    bottom: 30%;
+    left: 30%;
+    animation-delay: 42s;
+}
+
+.random-6 {
+    bottom: 50%;
+    right: 25%;
+    animation-delay: 48s;
+}
+
+.random-7 {
+    top: 15%;
+    right: 10%;
+    animation-delay: 54s;
+}
+
+/* Twinkle Animation */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0; /* Invisible at start and end */
+        transform: scale(0.5); /* Shrinking effect */
+        box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.3); /* Dim glow */
+    }
+    50% {
+        opacity: 1; /* Fully visible at mid-point */
+        transform: scale(1); /* Normal size */
+        box-shadow: 0 0 15px 6px rgba(255, 255, 255, 0.7); /* Bright glow */
+    }
+}
+
